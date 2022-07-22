@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { Layout } from 'components'
+import { Layout, Input } from 'components'
 
 export const CadastroProdutos: React.FC = () => {
 
-    const [sku, setSku] = useState('')
-    const [preco, setPreco] = useState('')
-    const [nome, setNome] = useState('')
-    const [descricao, setDescricao] = useState('')
+    const [sku, setSku] = useState<string>('')
+    const [preco, setPreco] = useState<string>('')
+    const [nome, setNome] = useState<string>('')
+    const [descricao, setDescricao] = useState<string>('')
 
     const submit = () => {
         const produto = {
@@ -19,6 +19,8 @@ export const CadastroProdutos: React.FC = () => {
         <Layout titulo="Cadastro de Protudos">
 
             <div className="columns">
+                <Input label="SKU: *" columnClasses="is-half" onChange={setSku} value={sku} />
+
                 <div className="field is-half column">
                     <label className="label" htmlFor="inputSku">SKU: *</label>
                     <div className="control">
